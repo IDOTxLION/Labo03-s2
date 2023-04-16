@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_10_Labo4_Participation_H2022.Combinaison" Collapsed="true">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEABAAAAEAAAACQAAAAAAAAAAIQAAAAAAQAA=</HashCode>
+      <FileName>Combinaison.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_10_Labo4_Participation_H2022.LottoMax" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>LottoMax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_10_Labo4_Participation_H2022.ToutOuRien" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>ToutOuRien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_10_Labo4_Participation_H2022.Participation" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAEAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Participation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_10_Labo4_Participation_H2022.ParticipationLottoMax" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Participation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_10_Labo4_Participation_H2022.ParticipationToutOuRien" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Participation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
