@@ -15,33 +15,33 @@ namespace Labo03
 {
     abstract class Combinaison
     {
-        int nbChiffres;
-        int min;
-        int max;
 
-        //public int NbChiffres
-        //{ get => nbChiffres; set { nbChiffres = value; } }
-        //public int Min
-        //{ get => min; set { min = value; } }
-        //public int Max
-        //{ get => max; set { max = value; } }
+  
+
+        public int NbChiffres
+        { get; set; }
+        public int Min
+        { get; set; }
+        public int Max
+        { get; set; }
         /// <summary>
         /// Constructeur paramétrique
         /// </summary>
         public Combinaison(int nbChiffres, int min, int max)
         {
-            this.nbChiffres = nbChiffres;
-            this.min = min;
-            this.max = max;
+            NbChiffres = nbChiffres;
+            Min = min;
+            Max = max;
         }
         // 
         public static List<int> D(int nbChiffres, int min, int max)
         {
-            List<int> list = new List<int>();
+            List<int> list = new();
             for (int i = 0; i != nbChiffres; i++)
             {
                 list.Add(Générateur.Next(min, max));
             }
+            list.Sort();
             return list;
 
 
@@ -50,13 +50,8 @@ namespace Labo03
 
         public override string ToString()
         {
-            List<int> list = D(nbChiffres, min, max);
+            List<int> list = D(NbChiffres, Min, Max);
             string chaine = string.Empty;
-            //foreach (int n in D(nbChiffres, min, max))
-            //    if(n == D(nbChiffres, min, max).Count-1)
-            //        chaine += n.ToString();
-            //    else
-            //        chaine += string.Format(" {0} - ", n);
             for (int i = 0; i < list.Count; i++)
                 if (i == list.Count - 1)
                     chaine += list[i].ToString();
