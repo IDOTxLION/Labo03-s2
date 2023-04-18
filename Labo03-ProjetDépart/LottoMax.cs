@@ -1,4 +1,4 @@
-﻿// Labo 03, H-2023
+// Labo 03, H-2023
 //
 // Classe dérivant Combinaison et qui modélise une combinaison
 // de LottoMax
@@ -17,7 +17,18 @@ namespace Labo03
    // Note : l'héritage doit être rétabli dans la version à remettre de votre 
    // laboratoire. La mise en commentaire est là pour que le projet compile au
    // moment de vous le remettre entre les mains. 
-   class LottoMax // : Combinaison
+   class LottoMax : Combinaison
    {
-   }
+        public LottoMax()
+            :base(7,1,50)
+        {
+
+        }
+        public override string ToString()
+        {
+            string chaine = string.Empty;
+
+            return chaine;
+        }
+    }
 }
