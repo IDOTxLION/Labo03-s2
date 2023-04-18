@@ -1,4 +1,4 @@
-﻿// Labo 03, H-2023
+// Labo 03, H-2023
 //
 // Classe dérivant de Combinaison et qui modélise une combinaison
 // de Tout ou rien
@@ -14,10 +14,22 @@ using System.Text;
 
 namespace Labo03
 {
-   // Note : l'héritage doit être rétabli dans la version à remettre de votre 
-   // laboratoire. La mise en commentaire est là pour que le projet compile au
-   // moment de vous le remettre entre les mains. 
-   class ToutOuRien // : Combinaison
-   {
-   }
+    // Note : l'héritage doit être rétabli dans la version à remettre de votre 
+    // laboratoire. La mise en commentaire est là pour que le projet compile au
+    // moment de vous le remettre entre les mains. 
+    class ToutOuRien : Combinaison
+    {
+        public ToutOuRien()
+            : base(12, 1, 25 + 1)
+        {
+
+        }
+
+    }
 }
+
+
+
+
+
+
