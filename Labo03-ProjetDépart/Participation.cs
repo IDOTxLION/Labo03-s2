@@ -1,4 +1,4 @@
-﻿// Labo 03, H-2023
+// Labo 03, H-2023
 //
 // Participation modélise les modalités de participation à
 // une loterie. Ses dérivés expriment les détails de ces
@@ -19,19 +19,53 @@ namespace Labo03
 {
    abstract class Participation
    {
-      public abstract float Coût { get; set; }
-   }
+      public abstract float Coût { get;  }
+      
+      public Participation()
+        {
+            List<Combinaison> NbrCombinaison = new();
+        }
+        public abstract override string ToString()
+        {
+            StringBuilder chaine = new StringBuilder();
+            chaine = string.Empty;
+            return chaine;
+
+        }
+
+    }
 
    class ParticipationLottoMax : Participation
    {
-      // à modifier
-      public override float Coût { get { return 0; } set { } }
+        public ParticipationLottoMax()
+        {
+            LottoMax comb1 = new LottoMax(); LottoMax comb2 = new LottoMax(); LottoMax comb3 = new LottoMax();
+        }
+
+        public abstract override string ToString()
+        {
+            StringBuilder chaine = new();
+            chaine.Append("Billet de Lotto Max\n");
+            chaine.Append("\n");
+            chaine.Append($"{comb1}\n{comb2}\n{comb3}\n");
+
+
+        }
+
+
+
+
+        public override float Coût { get { return 0; }  }
 
    }
 
    class ParticipationToutOuRien : Participation
    {
-      // à modifier
-      public override float Coût { get { return 0; } set { } }
+        public ParticipationToutOuRien()
+        {
+            LottoMax val = new LottoMax();
+        }
+
+        public override float Coût { get { return 0; }  }
    }
 }
