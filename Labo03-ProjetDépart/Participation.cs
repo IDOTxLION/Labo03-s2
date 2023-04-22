@@ -12,60 +12,82 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Labo03
 {
-   abstract class Participation
-   {
-      public abstract float Coût { get;  }
-      
-      public Participation()
+    abstract class Participation
+    {
+        public abstract float Coût { get; }
+        List<Combinaison> nbrcombinaisons;
+        public List<Combinaison> Nbrcombinaisons 
+        { get => nbrcombinaisons; set { nbrcombinaisons =value; } }
+
+        public Participation()
         {
-            List<Combinaison> NbrCombinaison = new();
+            Nbrcombinaisons=nbrcombinaisons;
+
         }
-        public abstract override string ToString()
+
+        public override string ToString()
         {
             StringBuilder chaine = new StringBuilder();
-            chaine = string.Empty;
-            return chaine;
+            
+            return chaine.ToString();
 
         }
 
     }
 
-   class ParticipationLottoMax : Participation
-   {
+    class ParticipationLottoMax : Participation
+    {
         public ParticipationLottoMax()
+            : base()
         {
-            LottoMax comb1 = new LottoMax(); LottoMax comb2 = new LottoMax(); LottoMax comb3 = new LottoMax();
+            LottoMax comb = new LottoMax();
+            Nbrcombinaisons = new List<Combinaison>();
+            Nbrcombinaisons.Add(comb);
+
+            Coût = 5;
         }
 
-        public abstract override string ToString()
+        public override string ToString()
         {
             StringBuilder chaine = new();
-            chaine.Append("Billet de Lotto Max\n");
-            chaine.Append("\n");
-            chaine.Append($"{comb1}\n{comb2}\n{comb3}\n");
+
+            for (int i = 0; i < 3; i++)
+            {
+                foreach (Combinaison n in Nbrcombinaisons)
+                    chaine.Append($"{n}\n");    
+            }
+            return chaine.ToString();
 
 
         }
+        public override float Coût { get;  }
 
+    }
 
-
-
-        public override float Coût { get { return 0; }  }
-
-   }
-
-   class ParticipationToutOuRien : Participation
-   {
+    class ParticipationToutOuRien : Participation
+    {
         public ParticipationToutOuRien()
         {
-            LottoMax val = new LottoMax();
+            ToutOuRien comb = new ToutOuRien();
+            Nbrcombinaisons = new List<Combinaison>();
+            Nbrcombinaisons.Add(comb);
+            Coût=2;
         }
+        public override string ToString()
+        {
+            StringBuilder chaine = new();
 
-        public override float Coût { get { return 0; }  }
-   }
+            foreach (Combinaison n in Nbrcombinaisons)
+                chaine.Append($"{n}\n");
+            return chaine.ToString();
+        }
+        public override float Coût { get; }
+    }
 }
