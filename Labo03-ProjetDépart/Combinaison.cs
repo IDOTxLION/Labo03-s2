@@ -10,13 +10,14 @@
 //-----------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Labo03
 {
     abstract class Combinaison
     {
 
-  
+
 
         public int NbChiffres
         { get; set; }
@@ -24,6 +25,13 @@ namespace Labo03
         { get; set; }
         public int Max
         { get; set; }
+        List<int> liste;
+        public List<int> Liste
+        {
+            get => liste;
+            set { liste= D(NbChiffres, Min, Max); }
+
+        }
         /// <summary>
         /// Constructeur paramétrique
         /// </summary>
@@ -32,34 +40,48 @@ namespace Labo03
             NbChiffres = nbChiffres;
             Min = min;
             Max = max;
+            Liste = liste;
         }
         // 
+
         public static List<int> D(int nbChiffres, int min, int max)
         {
-            List<int> list = new();
+            List<int> NbrDeValeur = new List<int>(max);
+            List<int> Liste = new();
+            for (int i = 1; i != max; i++)
+            {
+                NbrDeValeur.Add(i);
+            }
+
             for (int i = 0; i != nbChiffres; i++)
             {
-                list.Add(Générateur.Next(min, max));
-            }
-            list.Sort();
-            return list;
+                int val = NbrDeValeur[Générateur.Next(min, NbrDeValeur.Count)];
+                Liste.Add(val);
+                NbrDeValeur.Remove(val);
 
+
+            }
+            Liste.Sort();
+            return Liste;
 
         }
-
+        
 
         public override string ToString()
         {
-            List<int> list = D(NbChiffres, Min, Max);
-            string chaine = string.Empty;
-            for (int i = 0; i < list.Count; i++)
-                if (i == list.Count - 1)
-                    chaine += list[i].ToString();
-                else
-                    chaine += string.Format(" {0} - ", list[i]);
+
+            StringBuilder chaine = new();
+            for(int i = 0; i< Liste.Count; i++)
+                if(i==Liste.Count-1)
+                    chaine.Append(Liste[i]);
+            else
+                    chaine.Append(string.Format("{0,2} - ", Liste[i])); 
+                    
+
+            Liste = new();
 
 
-            return chaine;
+            return chaine.ToString();
 
         }
     }
